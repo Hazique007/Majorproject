@@ -17,3 +17,10 @@ def verify_connection():
         print(f"❌ Connection failed: {e}")
         print("→ Check your internet connection or Atlas IP whitelist")
         exit(1)
+
+# ✅ Add this block at the bottom
+if __name__ == "__main__":
+    verify_connection()
+    db = get_db()
+    print(f"✅ Database: {db.name}")
+    print(f"✅ Collections: {db.list_collection_names()}")
